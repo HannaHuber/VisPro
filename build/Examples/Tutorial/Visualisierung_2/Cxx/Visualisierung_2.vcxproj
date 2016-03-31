@@ -263,58 +263,62 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\VTK\Examples\Tutorial\Step6\Cxx\CMakeLists.txt">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/VTK/Examples/Tutorial/Step6/Cxx/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
-"D:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/VTK -BC:/VTK/build --check-stamp-file C:\VTK\build\Examples\Tutorial\Step6\Cxx\CMakeFiles\generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+    <CustomBuild Include="C:\VTK\Examples\Tutorial\Visualisierung_2\Cxx\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/VTK/Examples/Tutorial/Visualisierung_2/Cxx/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+        setlocal
+        "D:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/VTK -BC:/VTK/build --check-stamp-file C:\VTK\build\Examples\Tutorial\Visualisierung_2\Cxx\CMakeFiles\generate.stamp
+        if %errorlevel% neq 0 goto :cmEnd
+        :cmEnd
+        endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 :cmErrorLevel
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/VTK/Examples/Tutorial/Step6/Cxx/CMakeLists.txt;C:\VTK\Examples\Tutorial\Step6\Cxx\CMakeLists.txt;C:\VTK\build\VTKConfigVersion.cmake;C:\VTK\build\VTKConfig.cmake;C:\VTK\CMake\vtkModuleAPI.cmake;D:\Program Files (x86)\CMake\share\cmake-3.4\Modules\CMakeConfigurableFile.in;C:\VTK\CMake\UseVTK.cmake;C:\VTK\Examples\Tutorial\Step6\Cxx\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\VTK\build\Examples\Tutorial\Step6\Cxx\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/VTK/Examples/Tutorial/Visualisierung_2/Cxx/CMakeLists.txt;C:\VTK\Examples\Tutorial\Visualisierung_2\Cxx\CMakeLists.txt;C:\VTK\build\VTKConfigVersion.cmake;C:\VTK\build\VTKConfig.cmake;C:\VTK\CMake\vtkModuleAPI.cmake;D:\Program Files (x86)\CMake\share\cmake-3.4\Modules\CMakeConfigurableFile.in;C:\VTK\CMake\UseVTK.cmake;C:\VTK\Examples\Tutorial\Visualisierung_2\Cxx\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\VTK\build\Examples\Tutorial\Visualisierung_2\Cxx\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/VTK/Examples/Tutorial/Step6/Cxx/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
-"D:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/VTK -BC:/VTK/build --check-stamp-file C:\VTK\build\Examples\Tutorial\Step6\Cxx\CMakeFiles\generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/VTK/Examples/Tutorial/Visualisierung_2/Cxx/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+        setlocal
+        "D:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/VTK -BC:/VTK/build --check-stamp-file C:\VTK\build\Examples\Tutorial\Visualisierung_2\Cxx\CMakeFiles\generate.stamp
+        if %errorlevel% neq 0 goto :cmEnd
+        :cmEnd
+        endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 :cmErrorLevel
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/VTK/Examples/Tutorial/Step6/Cxx/CMakeLists.txt;C:\VTK\Examples\Tutorial\Step6\Cxx\CMakeLists.txt;C:\VTK\build\VTKConfigVersion.cmake;C:\VTK\build\VTKConfig.cmake;C:\VTK\CMake\vtkModuleAPI.cmake;D:\Program Files (x86)\CMake\share\cmake-3.4\Modules\CMakeConfigurableFile.in;C:\VTK\CMake\UseVTK.cmake;C:\VTK\Examples\Tutorial\Step6\Cxx\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\VTK\build\Examples\Tutorial\Step6\Cxx\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/VTK/Examples/Tutorial/Visualisierung_2/Cxx/CMakeLists.txt;C:\VTK\Examples\Tutorial\Visualisierung_2\Cxx\CMakeLists.txt;C:\VTK\build\VTKConfigVersion.cmake;C:\VTK\build\VTKConfig.cmake;C:\VTK\CMake\vtkModuleAPI.cmake;D:\Program Files (x86)\CMake\share\cmake-3.4\Modules\CMakeConfigurableFile.in;C:\VTK\CMake\UseVTK.cmake;C:\VTK\Examples\Tutorial\Visualisierung_2\Cxx\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\VTK\build\Examples\Tutorial\Visualisierung_2\Cxx\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/VTK/Examples/Tutorial/Step6/Cxx/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
-"D:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/VTK -BC:/VTK/build --check-stamp-file C:\VTK\build\Examples\Tutorial\Step6\Cxx\CMakeFiles\generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/VTK/Examples/Tutorial/Visualisierung_2/Cxx/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+        setlocal
+        "D:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/VTK -BC:/VTK/build --check-stamp-file C:\VTK\build\Examples\Tutorial\Visualisierung_2\Cxx\CMakeFiles\generate.stamp
+        if %errorlevel% neq 0 goto :cmEnd
+        :cmEnd
+        endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 :cmErrorLevel
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/VTK/Examples/Tutorial/Step6/Cxx/CMakeLists.txt;C:\VTK\Examples\Tutorial\Step6\Cxx\CMakeLists.txt;C:\VTK\build\VTKConfigVersion.cmake;C:\VTK\build\VTKConfig.cmake;C:\VTK\CMake\vtkModuleAPI.cmake;D:\Program Files (x86)\CMake\share\cmake-3.4\Modules\CMakeConfigurableFile.in;C:\VTK\CMake\UseVTK.cmake;C:\VTK\Examples\Tutorial\Step6\Cxx\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\VTK\build\Examples\Tutorial\Step6\Cxx\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/VTK/Examples/Tutorial/Visualisierung_2/Cxx/CMakeLists.txt;C:\VTK\Examples\Tutorial\Visualisierung_2\Cxx\CMakeLists.txt;C:\VTK\build\VTKConfigVersion.cmake;C:\VTK\build\VTKConfig.cmake;C:\VTK\CMake\vtkModuleAPI.cmake;D:\Program Files (x86)\CMake\share\cmake-3.4\Modules\CMakeConfigurableFile.in;C:\VTK\CMake\UseVTK.cmake;C:\VTK\Examples\Tutorial\Visualisierung_2\Cxx\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\VTK\build\Examples\Tutorial\Visualisierung_2\Cxx\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/VTK/Examples/Tutorial/Step6/Cxx/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
-"D:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/VTK -BC:/VTK/build --check-stamp-file C:\VTK\build\Examples\Tutorial\Step6\Cxx\CMakeFiles\generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/VTK/Examples/Tutorial/Visualisierung_2/Cxx/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+        setlocal
+        "D:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/VTK -BC:/VTK/build --check-stamp-file C:\VTK\build\Examples\Tutorial\Visualisierung_2\Cxx\CMakeFiles\generate.stamp
+        if %errorlevel% neq 0 goto :cmEnd
+        :cmEnd
+        endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 :cmErrorLevel
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/VTK/Examples/Tutorial/Step6/Cxx/CMakeLists.txt;C:\VTK\Examples\Tutorial\Step6\Cxx\CMakeLists.txt;C:\VTK\build\VTKConfigVersion.cmake;C:\VTK\build\VTKConfig.cmake;C:\VTK\CMake\vtkModuleAPI.cmake;D:\Program Files (x86)\CMake\share\cmake-3.4\Modules\CMakeConfigurableFile.in;C:\VTK\CMake\UseVTK.cmake;C:\VTK\Examples\Tutorial\Step6\Cxx\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\VTK\build\Examples\Tutorial\Step6\Cxx\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/VTK/Examples/Tutorial/Visualisierung_2/Cxx/CMakeLists.txt;C:\VTK\Examples\Tutorial\Visualisierung_2\Cxx\CMakeLists.txt;C:\VTK\build\VTKConfigVersion.cmake;C:\VTK\build\VTKConfig.cmake;C:\VTK\CMake\vtkModuleAPI.cmake;D:\Program Files (x86)\CMake\share\cmake-3.4\Modules\CMakeConfigurableFile.in;C:\VTK\CMake\UseVTK.cmake;C:\VTK\Examples\Tutorial\Visualisierung_2\Cxx\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\VTK\build\Examples\Tutorial\Visualisierung_2\Cxx\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
