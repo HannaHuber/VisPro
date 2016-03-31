@@ -65,7 +65,7 @@ public:
 int main()
 {
 
-	std::string filename = "";
+	std::string filename = "C:\\VTK\\Data\\OBJ\\Vanquish - Augmented Reaction Suit\\vanquish.obj";
 	//vtkSmartPointer<vtkOBJReader> reader = vtkSmartPointer<vtkOBJReader>::New();
 	vtkOBJReader *reader = vtkOBJReader::New();
 	reader->SetFileName(filename.c_str());
@@ -92,7 +92,8 @@ int main()
   // connect the output of the cone souece to the input of this mapper.
   //
   vtkPolyDataMapper *coneMapper = vtkPolyDataMapper::New();
-  coneMapper->SetInputConnection( cone->GetOutputPort() );
+  //coneMapper->SetInputConnection( cone->GetOutputPort() );
+  coneMapper->SetInputConnection(reader->GetOutputPort());
 
   //
   // Create an actor to represent the cone. The actor orchestrates rendering
