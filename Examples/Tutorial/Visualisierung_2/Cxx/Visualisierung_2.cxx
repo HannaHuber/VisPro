@@ -65,7 +65,7 @@ public:
 int main()
 {
 
-	std::string filename = "";  
+	std::string filename = "";
 	//vtkSmartPointer<vtkOBJReader> reader = vtkSmartPointer<vtkOBJReader>::New();
 	vtkOBJReader *reader = vtkOBJReader::New();
 	reader->SetFileName(filename.c_str());
