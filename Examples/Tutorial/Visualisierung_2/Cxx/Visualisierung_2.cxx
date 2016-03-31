@@ -37,6 +37,12 @@
 #include "vtkBoxWidget.h"
 #include "vtkTransform.h"
 #include "vtkInteractorStyleTrackballCamera.h"
+// ---------------------------------------
+#include "vtkOBJReader.h"
+#include "vtkSmartPointer.h"
+#include <string>
+// ---------------------------------------
+
 
 //
 // Similar to Cone2.cxx, we define a callback for interaction.
@@ -58,6 +64,15 @@ public:
 
 int main()
 {
+
+	std::string filename = "";  
+	//vtkSmartPointer<vtkOBJReader> reader = vtkSmartPointer<vtkOBJReader>::New();
+	vtkOBJReader *reader = vtkOBJReader::New();
+	reader->SetFileName(filename.c_str());
+	reader->Update();
+
+  // ----------------------------------------------------------------------
+
   //
   // Next we create an instance of vtkConeSource and set some of its
   // properties. The instance of vtkConeSource "cone" is part of a
