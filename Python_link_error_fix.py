@@ -7,7 +7,7 @@ This is a temporary script file.
 
 import os
 replaceActive=False
-for root, dirs, files in os.walk("D:/VTK/VTK-7.0.0_VS2013_II/build"):
+for root, dirs, files in os.walk("C:/VTK/build"):
     for file in files:
         if file.endswith(".vcxproj"):
             fname = os.path.join(root, file)
