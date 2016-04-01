@@ -267,7 +267,7 @@
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/VTK/Examples/Tutorial/Visualisierung_2/Cxx/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
         setlocal
-        "D:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/VTK -BC:/VTK/build --check-stamp-file C:\VTK\build\Examples\Tutorial\Visualisierung_2\Cxx\CMakeFiles\generate.stamp
+        "C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/VTK -BC:/VTK/build --check-stamp-file C:\VTK\build\Examples\Tutorial\Visualisierung_2\Cxx\CMakeFiles\generate.stamp
         if %errorlevel% neq 0 goto :cmEnd
         :cmEnd
         endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
