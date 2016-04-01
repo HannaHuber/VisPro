@@ -6,7 +6,7 @@ if(POLICY CMP0053)
   cmake_policy(SET CMP0053 NEW) # CMake 3.1
 endif()
 
-PROJECT (Step6)
+PROJECT (Visualisierung_2)
 
 find_package(VTK COMPONENTS
   vtkFiltersSources
@@ -15,5 +15,5 @@ find_package(VTK COMPONENTS
 )
 include(${VTK_USE_FILE})
 
-add_executable(Cone6 MACOSX_BUNDLE Cone6.cxx)
-target_link_libraries(Cone6 ${VTK_LIBRARIES})
+add_executable(Visualisierung_2 MACOSX_BUNDLE Visualisierung_2.cxx)
+target_link_libraries(Visualisierung_2 ${VTK_LIBRARIES})
