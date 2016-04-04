@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{195A6547-B126-4F97-9445-1652AB59A5A4}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\VTK\build\Common\Core;C:\VTK\Common\Core;C:\VTK\build\Utilities\KWSys;C:\VTK\Utilities\KWSys;C:\VTK\build\IO\Image;C:\VTK\IO\Image;C:\VTK\build\Common\DataModel;C:\VTK\Common\DataModel;C:\VTK\build\Common\Math;C:\VTK\Common\Math;C:\VTK\build\Common\Misc;C:\VTK\Common\Misc;C:\VTK\build\Common\System;C:\VTK\Common\System;C:\VTK\build\Common\Transforms;C:\VTK\Common\Transforms;C:\VTK\build\Common\ExecutionModel;C:\VTK\Common\ExecutionModel;C:\VTK\build\Utilities\DICOMParser;C:\VTK\Utilities\DICOMParser;C:\VTK\build\IO\Core;C:\VTK\IO\Core;C:\VTK\build\ThirdParty\zlib;C:\VTK\ThirdParty\zlib;C:\VTK\build\Utilities\MetaIO\vtkmetaio;C:\VTK\build\Utilities\MetaIO;C:\VTK\Utilities\MetaIO;C:\VTK\build\ThirdParty\jpeg;C:\VTK\ThirdParty\jpeg;C:\VTK\build\ThirdParty\png;C:\VTK\ThirdParty\png;C:\VTK\build\ThirdParty\tiff;C:\VTK\ThirdParty\tiff;C:\VTK\build\IO\XML;C:\VTK\IO\XML;C:\VTK\build\IO\Geometry;C:\VTK\IO\Geometry;C:\VTK\build\IO\XMLParser;C:\VTK\IO\XMLParser;C:\VTK\build\ThirdParty\expat;C:\VTK\ThirdParty\expat;C:\VTK\build\Interaction\Widgets;C:\VTK\Interaction\Widgets;C:\VTK\build\Filters\Hybrid;C:\VTK\Filters\Hybrid;C:\VTK\build\Filters\General;C:\VTK\Filters\General;C:\VTK\build\Common\ComputationalGeometry;C:\VTK\Common\ComputationalGeometry;C:\VTK\build\Filters\Core;C:\VTK\Filters\Core;C:\VTK\build\Imaging\Sources;C:\VTK\Imaging\Sources;C:\VTK\build\Imaging\Core;C:\VTK\Imaging\Core;C:\VTK\build\Rendering\Core;C:\VTK\Rendering\Core;C:\VTK\build\Common\Color;C:\VTK\Common\Color;C:\VTK\build\Filters\Extraction;C:\VTK\Filters\Extraction;C:\VTK\build\Filters\Statistics;C:\VTK\Filters\Statistics;C:\VTK\build\Imaging\Fourier;C:\VTK\Imaging\Fourier;C:\VTK\build\ThirdParty\alglib;C:\VTK\ThirdParty\alglib;C:\VTK\build\Filters\Geometry;C:\VTK\Filters\Geometry;C:\VTK\build\Filters\Sources;C:\VTK\Filters\Sources;C:\VTK\build\Filters\Modeling;C:\VTK\Filters\Modeling;C:\VTK\build\Imaging\General;C:\VTK\Imaging\General;C:\VTK\build\Imaging\Hybrid;C:\VTK\Imaging\Hybrid;C:\VTK\build\Interaction\Style;C:\VTK\Interaction\Style;C:\VTK\build\Rendering\Annotation;C:\VTK\Rendering\Annotation;C:\VTK\build\Imaging\Color;C:\VTK\Imaging\Color;C:\VTK\build\Rendering\FreeType;C:\VTK\Rendering\FreeType;C:\VTK\build\ThirdParty\freetype;C:\VTK\ThirdParty\freetype;C:\VTK\build\Rendering\Volume;C:\VTK\Rendering\Volume;C:\VTK\build\Rendering\VolumeOpenGL2;C:\VTK\Rendering\VolumeOpenGL2;C:\VTK\build\Rendering\OpenGL2;C:\VTK\Rendering\OpenGL2;C:\VTK\build\Utilities\EncodeString;C:\VTK\Utilities\EncodeString;C:\VTK\build\ThirdParty\glew;C:\VTK\ThirdParty\glew;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\VTK\build\Common\Core;C:\VTK\Common\Core;C:\VTK\build\Utilities\KWSys;C:\VTK\Utilities\KWSys;C:\VTK\build\IO\Image;C:\VTK\IO\Image;C:\VTK\build\Common\DataModel;C:\VTK\Common\DataModel;C:\VTK\build\Common\Math;C:\VTK\Common\Math;C:\VTK\build\Common\Misc;C:\VTK\Common\Misc;C:\VTK\build\Common\System;C:\VTK\Common\System;C:\VTK\build\Common\Transforms;C:\VTK\Common\Transforms;C:\VTK\build\Common\ExecutionModel;C:\VTK\Common\ExecutionModel;C:\VTK\build\Utilities\DICOMParser;C:\VTK\Utilities\DICOMParser;C:\VTK\build\IO\Core;C:\VTK\IO\Core;C:\VTK\build\ThirdParty\zlib;C:\VTK\ThirdParty\zlib;C:\VTK\build\Utilities\MetaIO\vtkmetaio;C:\VTK\build\Utilities\MetaIO;C:\VTK\Utilities\MetaIO;C:\VTK\build\ThirdParty\jpeg;C:\VTK\ThirdParty\jpeg;C:\VTK\build\ThirdParty\png;C:\VTK\ThirdParty\png;C:\VTK\build\ThirdParty\tiff;C:\VTK\ThirdParty\tiff;C:\VTK\build\IO\XML;C:\VTK\IO\XML;C:\VTK\build\IO\Geometry;C:\VTK\IO\Geometry;C:\VTK\build\IO\XMLParser;C:\VTK\IO\XMLParser;C:\VTK\build\ThirdParty\expat;C:\VTK\ThirdParty\expat;C:\VTK\build\Interaction\Widgets;C:\VTK\Interaction\Widgets;C:\VTK\build\Filters\Hybrid;C:\VTK\Filters\Hybrid;C:\VTK\build\Filters\General;C:\VTK\Filters\General;C:\VTK\build\Common\ComputationalGeometry;C:\VTK\Common\ComputationalGeometry;C:\VTK\build\Filters\Core;C:\VTK\Filters\Core;C:\VTK\build\Imaging\Sources;C:\VTK\Imaging\Sources;C:\VTK\build\Imaging\Core;C:\VTK\Imaging\Core;C:\VTK\build\Rendering\Core;C:\VTK\Rendering\Core;C:\VTK\build\Common\Color;C:\VTK\Common\Color;C:\VTK\build\Filters\Extraction;C:\VTK\Filters\Extraction;C:\VTK\build\Filters\Statistics;C:\VTK\Filters\Statistics;C:\VTK\build\Imaging\Fourier;C:\VTK\Imaging\Fourier;C:\VTK\build\ThirdParty\alglib;C:\VTK\ThirdParty\alglib;C:\VTK\build\Filters\Geometry;C:\VTK\Filters\Geometry;C:\VTK\build\Filters\Sources;C:\VTK\Filters\Sources;C:\VTK\build\Filters\Modeling;C:\VTK\Filters\Modeling;C:\VTK\build\Imaging\General;C:\VTK\Imaging\General;C:\VTK\build\Imaging\Hybrid;C:\VTK\Imaging\Hybrid;C:\VTK\build\Interaction\Style;C:\VTK\Interaction\Style;C:\VTK\build\Rendering\Annotation;C:\VTK\Rendering\Annotation;C:\VTK\build\Imaging\Color;C:\VTK\Imaging\Color;C:\VTK\build\Rendering\FreeType;C:\VTK\Rendering\FreeType;C:\VTK\build\ThirdParty\freetype;C:\VTK\ThirdParty\freetype;C:\VTK\build\Rendering\Volume;C:\VTK\Rendering\Volume;C:\VTK\build\Rendering\VolumeOpenGL2;C:\VTK\Rendering\VolumeOpenGL2;C:\VTK\build\Rendering\OpenGL2;C:\VTK\Rendering\OpenGL2;C:\VTK\build\Utilities\EncodeString;C:\VTK\Utilities\EncodeString;C:\VTK\build\ThirdParty\glew;C:\VTK\ThirdParty\glew;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\VTK\build\Common\Core;C:\VTK\Common\Core;C:\VTK\build\Utilities\KWSys;C:\VTK\Utilities\KWSys;C:\VTK\build\IO\Image;C:\VTK\IO\Image;C:\VTK\build\Common\DataModel;C:\VTK\Common\DataModel;C:\VTK\build\Common\Math;C:\VTK\Common\Math;C:\VTK\build\Common\Misc;C:\VTK\Common\Misc;C:\VTK\build\Common\System;C:\VTK\Common\System;C:\VTK\build\Common\Transforms;C:\VTK\Common\Transforms;C:\VTK\build\Common\ExecutionModel;C:\VTK\Common\ExecutionModel;C:\VTK\build\Utilities\DICOMParser;C:\VTK\Utilities\DICOMParser;C:\VTK\build\IO\Core;C:\VTK\IO\Core;C:\VTK\build\ThirdParty\zlib;C:\VTK\ThirdParty\zlib;C:\VTK\build\Utilities\MetaIO\vtkmetaio;C:\VTK\build\Utilities\MetaIO;C:\VTK\Utilities\MetaIO;C:\VTK\build\ThirdParty\jpeg;C:\VTK\ThirdParty\jpeg;C:\VTK\build\ThirdParty\png;C:\VTK\ThirdParty\png;C:\VTK\build\ThirdParty\tiff;C:\VTK\ThirdParty\tiff;C:\VTK\build\IO\XML;C:\VTK\IO\XML;C:\VTK\build\IO\Geometry;C:\VTK\IO\Geometry;C:\VTK\build\IO\XMLParser;C:\VTK\IO\XMLParser;C:\VTK\build\ThirdParty\expat;C:\VTK\ThirdParty\expat;C:\VTK\build\Interaction\Widgets;C:\VTK\Interaction\Widgets;C:\VTK\build\Filters\Hybrid;C:\VTK\Filters\Hybrid;C:\VTK\build\Filters\General;C:\VTK\Filters\General;C:\VTK\build\Common\ComputationalGeometry;C:\VTK\Common\ComputationalGeometry;C:\VTK\build\Filters\Core;C:\VTK\Filters\Core;C:\VTK\build\Imaging\Sources;C:\VTK\Imaging\Sources;C:\VTK\build\Imaging\Core;C:\VTK\Imaging\Core;C:\VTK\build\Rendering\Core;C:\VTK\Rendering\Core;C:\VTK\build\Common\Color;C:\VTK\Common\Color;C:\VTK\build\Filters\Extraction;C:\VTK\Filters\Extraction;C:\VTK\build\Filters\Statistics;C:\VTK\Filters\Statistics;C:\VTK\build\Imaging\Fourier;C:\VTK\Imaging\Fourier;C:\VTK\build\ThirdParty\alglib;C:\VTK\ThirdParty\alglib;C:\VTK\build\Filters\Geometry;C:\VTK\Filters\Geometry;C:\VTK\build\Filters\Sources;C:\VTK\Filters\Sources;C:\VTK\build\Filters\Modeling;C:\VTK\Filters\Modeling;C:\VTK\build\Imaging\General;C:\VTK\Imaging\General;C:\VTK\build\Imaging\Hybrid;C:\VTK\Imaging\Hybrid;C:\VTK\build\Interaction\Style;C:\VTK\Interaction\Style;C:\VTK\build\Rendering\Annotation;C:\VTK\Rendering\Annotation;C:\VTK\build\Imaging\Color;C:\VTK\Imaging\Color;C:\VTK\build\Rendering\FreeType;C:\VTK\Rendering\FreeType;C:\VTK\build\ThirdParty\freetype;C:\VTK\ThirdParty\freetype;C:\VTK\build\Rendering\Volume;C:\VTK\Rendering\Volume;C:\VTK\build\Rendering\VolumeOpenGL2;C:\VTK\Rendering\VolumeOpenGL2;C:\VTK\build\Rendering\OpenGL2;C:\VTK\Rendering\OpenGL2;C:\VTK\build\Utilities\EncodeString;C:\VTK\Utilities\EncodeString;C:\VTK\build\ThirdParty\glew;C:\VTK\ThirdParty\glew;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\VTK\build\Common\Core;C:\VTK\Common\Core;C:\VTK\build\Utilities\KWSys;C:\VTK\Utilities\KWSys;C:\VTK\build\IO\Image;C:\VTK\IO\Image;C:\VTK\build\Common\DataModel;C:\VTK\Common\DataModel;C:\VTK\build\Common\Math;C:\VTK\Common\Math;C:\VTK\build\Common\Misc;C:\VTK\Common\Misc;C:\VTK\build\Common\System;C:\VTK\Common\System;C:\VTK\build\Common\Transforms;C:\VTK\Common\Transforms;C:\VTK\build\Common\ExecutionModel;C:\VTK\Common\ExecutionModel;C:\VTK\build\Utilities\DICOMParser;C:\VTK\Utilities\DICOMParser;C:\VTK\build\IO\Core;C:\VTK\IO\Core;C:\VTK\build\ThirdParty\zlib;C:\VTK\ThirdParty\zlib;C:\VTK\build\Utilities\MetaIO\vtkmetaio;C:\VTK\build\Utilities\MetaIO;C:\VTK\Utilities\MetaIO;C:\VTK\build\ThirdParty\jpeg;C:\VTK\ThirdParty\jpeg;C:\VTK\build\ThirdParty\png;C:\VTK\ThirdParty\png;C:\VTK\build\ThirdParty\tiff;C:\VTK\ThirdParty\tiff;C:\VTK\build\IO\XML;C:\VTK\IO\XML;C:\VTK\build\IO\Geometry;C:\VTK\IO\Geometry;C:\VTK\build\IO\XMLParser;C:\VTK\IO\XMLParser;C:\VTK\build\ThirdParty\expat;C:\VTK\ThirdParty\expat;C:\VTK\build\Interaction\Widgets;C:\VTK\Interaction\Widgets;C:\VTK\build\Filters\Hybrid;C:\VTK\Filters\Hybrid;C:\VTK\build\Filters\General;C:\VTK\Filters\General;C:\VTK\build\Common\ComputationalGeometry;C:\VTK\Common\ComputationalGeometry;C:\VTK\build\Filters\Core;C:\VTK\Filters\Core;C:\VTK\build\Imaging\Sources;C:\VTK\Imaging\Sources;C:\VTK\build\Imaging\Core;C:\VTK\Imaging\Core;C:\VTK\build\Rendering\Core;C:\VTK\Rendering\Core;C:\VTK\build\Common\Color;C:\VTK\Common\Color;C:\VTK\build\Filters\Extraction;C:\VTK\Filters\Extraction;C:\VTK\build\Filters\Statistics;C:\VTK\Filters\Statistics;C:\VTK\build\Imaging\Fourier;C:\VTK\Imaging\Fourier;C:\VTK\build\ThirdParty\alglib;C:\VTK\ThirdParty\alglib;C:\VTK\build\Filters\Geometry;C:\VTK\Filters\Geometry;C:\VTK\build\Filters\Sources;C:\VTK\Filters\Sources;C:\VTK\build\Filters\Modeling;C:\VTK\Filters\Modeling;C:\VTK\build\Imaging\General;C:\VTK\Imaging\General;C:\VTK\build\Imaging\Hybrid;C:\VTK\Imaging\Hybrid;C:\VTK\build\Interaction\Style;C:\VTK\Interaction\Style;C:\VTK\build\Rendering\Annotation;C:\VTK\Rendering\Annotation;C:\VTK\build\Imaging\Color;C:\VTK\Imaging\Color;C:\VTK\build\Rendering\FreeType;C:\VTK\Rendering\FreeType;C:\VTK\build\ThirdParty\freetype;C:\VTK\ThirdParty\freetype;C:\VTK\build\Rendering\Volume;C:\VTK\Rendering\Volume;C:\VTK\build\Rendering\VolumeOpenGL2;C:\VTK\Rendering\VolumeOpenGL2;C:\VTK\build\Rendering\OpenGL2;C:\VTK\Rendering\OpenGL2;C:\VTK\build\Utilities\EncodeString;C:\VTK\Utilities\EncodeString;C:\VTK\build\ThirdParty\glew;C:\VTK\ThirdParty\glew;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\VTK\Examples\VolumeRendering\Cxx\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/VTK/Examples/VolumeRendering/Cxx/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/VTK -BC:/VTK/build --check-stamp-file C:\VTK\build\Examples\VolumeRendering\Cxx\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/VTK/Examples/VolumeRendering/Cxx/CMakeLists.txt;C:\VTK\Examples\VolumeRendering\Cxx\CMakeLists.txt;C:\VTK\build\VTKConfigVersion.cmake;C:\VTK\build\VTKConfig.cmake;C:\VTK\CMake\vtkModuleAPI.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\CMakeConfigurableFile.in;C:\VTK\CMake\UseVTK.cmake;C:\VTK\Examples\VolumeRendering\Cxx\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\VTK\build\Examples\VolumeRendering\Cxx\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/VTK/Examples/VolumeRendering/Cxx/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/VTK -BC:/VTK/build --check-stamp-file C:\VTK\build\Examples\VolumeRendering\Cxx\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/VTK/Examples/VolumeRendering/Cxx/CMakeLists.txt;C:\VTK\Examples\VolumeRendering\Cxx\CMakeLists.txt;C:\VTK\build\VTKConfigVersion.cmake;C:\VTK\build\VTKConfig.cmake;C:\VTK\CMake\vtkModuleAPI.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\CMakeConfigurableFile.in;C:\VTK\CMake\UseVTK.cmake;C:\VTK\Examples\VolumeRendering\Cxx\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\VTK\build\Examples\VolumeRendering\Cxx\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/VTK/Examples/VolumeRendering/Cxx/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/VTK -BC:/VTK/build --check-stamp-file C:\VTK\build\Examples\VolumeRendering\Cxx\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/VTK/Examples/VolumeRendering/Cxx/CMakeLists.txt;C:\VTK\Examples\VolumeRendering\Cxx\CMakeLists.txt;C:\VTK\build\VTKConfigVersion.cmake;C:\VTK\build\VTKConfig.cmake;C:\VTK\CMake\vtkModuleAPI.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\CMakeConfigurableFile.in;C:\VTK\CMake\UseVTK.cmake;C:\VTK\Examples\VolumeRendering\Cxx\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\VTK\build\Examples\VolumeRendering\Cxx\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/VTK/Examples/VolumeRendering/Cxx/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/VTK -BC:/VTK/build --check-stamp-file C:\VTK\build\Examples\VolumeRendering\Cxx\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/VTK/Examples/VolumeRendering/Cxx/CMakeLists.txt;C:\VTK\Examples\VolumeRendering\Cxx\CMakeLists.txt;C:\VTK\build\VTKConfigVersion.cmake;C:\VTK\build\VTKConfig.cmake;C:\VTK\CMake\vtkModuleAPI.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\CMakeConfigurableFile.in;C:\VTK\CMake\UseVTK.cmake;C:\VTK\Examples\VolumeRendering\Cxx\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\VTK\build\Examples\VolumeRendering\Cxx\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:/VTK/build/Examples/VolumeRendering/Cxx/FixedPointVolumeRayCastMapperCT.vcxproj">
+      <Project>23952DE1-4B98-4400-9817-19B2B0C7E84F</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/VTK/build/Examples/VolumeRendering/Cxx/GPURenderDemo.vcxproj">
+      <Project>33BE11FC-BF5D-474E-9673-3457C2808DDD</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
