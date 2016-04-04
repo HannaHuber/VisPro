@@ -77,6 +77,11 @@ Wrapping
 *.vcxproj.user
 *.ilk
 *.pdb
+*.tlog
 
 # Visualisierung_2 application
 Visualisierung_2.exe
+
+# Cmake
+*.rule
+build\CMakeFiles\*
