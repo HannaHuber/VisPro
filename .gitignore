@@ -83,5 +83,6 @@ Wrapping
 Visualisierung_2.exe
 
 # Cmake
+*.cmake
 *.rule
-build\CMakeFiles
+build/CMakeFiles/
