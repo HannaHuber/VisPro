@@ -68,3 +68,15 @@ Utilities
 Views
 Web
 Wrapping
+
+# Visual Studio files
+*.sdf
+*.opensdf
+*.suo
+*.vcxproj.filters
+*.vcxproj.user
+*.ilk
+*.pdb
+
+# Visualisierung_2 application
+Visualisierung_2.exe
