@@ -1,9 +1,0 @@
-# Target labels
- vtkLocalExample
-# Source files and their labels
-C:/VTK/Examples/Build/vtkLocal/vtkLocalExample.cxx
-C:/VTK/Examples/Build/vtkLocal/vtkLocalExample.h
-C:/VTK/build/Examples/Build/vtkLocal/vtkLocalExampleModule.h
-C:/VTK/build/Examples/Build/vtkLocal/vtkLocalExampleHierarchy.stamp.txt
-C:/VTK/Examples/Build/vtkLocal/CMakeLists.txt
-C:/VTK/build/CMakeFiles/cc58a22bb88d2291018683a174f6d050/vtkLocalExampleHierarchy.stamp.txt.rule

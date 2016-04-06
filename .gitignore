@@ -78,6 +78,8 @@ Wrapping
 *.ilk
 *.pdb
 *.tlog
+*.obj
+*.log
 
 # Visualisierung_2 application
 Visualisierung_2.exe
