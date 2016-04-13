@@ -1,0 +1,22 @@
+#pragma once
+
+#include "SceneObject.h"
+#include "glm.hpp"
+
+class Camera : public SceneObject {
+public:
+	Camera(glm::mat4& model_matrix);
+	virtual ~Camera();
+	virtual void update(float deltaTime, glm::vec2 angle);			// rotate
+	virtual void update(float deltaTime, glm::vec3 direction);		// translate
+	virtual void update(float deltaTime);
+	virtual void draw();
+<<<<<<< HEAD
+	virtual glm::vec3 camera_location();
+=======
+	void setProjMatrix(int w, int h, float fov, float far_plane, float near_plane);
+>>>>>>> a768a546c555d4b62533f6e7efb6071e4bca28bf
+	glm::mat4 view_matrix();
+	glm::mat4 proj_matrix;
+
+};

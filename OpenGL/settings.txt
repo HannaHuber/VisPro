@@ -1,0 +1,4 @@
+width 1024
+height 800
+refreshrate 60
+fullscreen 0

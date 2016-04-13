@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Scene\BoundingBox.cpp" />
+    <ClCompile Include="..\Scene\Camera.cpp" />
+    <ClCompile Include="..\Scene\Energy.cpp" />
+    <ClCompile Include="..\Scene\Environment.cpp" />
+    <ClCompile Include="..\Scene\Face.cpp" />
+    <ClCompile Include="..\Scene\Geometry.cpp" />
+    <ClCompile Include="..\Scene\Item.cpp" />
+    <ClCompile Include="..\Scene\Light.cpp" />
+    <ClCompile Include="..\Scene\Mesh.cpp" />
+    <ClCompile Include="..\Scene\PointLight.cpp" />
+    <ClCompile Include="..\Scene\SceneImporter.cpp" />
+    <ClCompile Include="..\Scene\SceneObject.cpp" />
+    <ClCompile Include="..\Shader\AnimatedTextureShader.cpp" />
+    <ClCompile Include="..\Shader\BlinnPhongShader.cpp" />
+    <ClCompile Include="..\Shader\NormalShader.cpp" />
+    <ClCompile Include="..\Shader\Shader.cpp" />
+    <ClCompile Include="..\Shader\TextureShader.cpp" />
+    <ClCompile Include="..\Shader\ZBufferShader.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="SceneObjectManager.cpp" />
+    <ClCompile Include="ShadowMap.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="UserInput.cpp" />
+    <ClCompile Include="ViewFrustum.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Scene\BoundingBox.h" />
+    <ClInclude Include="..\Scene\Camera.h" />
+    <ClInclude Include="..\Scene\Energy.h" />
+    <ClInclude Include="..\Scene\Environment.h" />
+    <ClInclude Include="..\Scene\Face.h" />
+    <ClInclude Include="..\Scene\Geometry.h" />
+    <ClInclude Include="..\Scene\Item.h" />
+    <ClInclude Include="..\Scene\Light.h" />
+    <ClInclude Include="..\Scene\Mesh.h" />
+    <ClInclude Include="..\Scene\PointLight.h" />
+    <ClInclude Include="..\Scene\SceneImporter.h" />
+    <ClInclude Include="..\Scene\SceneObject.h" />
+    <ClInclude Include="..\Shader\AnimatedTextureShader.h" />
+    <ClInclude Include="..\Shader\BlinnPhongShader.h" />
+    <ClInclude Include="..\Shader\NormalShader.h" />
+    <ClInclude Include="..\Shader\Shader.h" />
+    <ClInclude Include="..\Shader\TextureShader.h" />
+    <ClInclude Include="..\Shader\ZBufferShader.h" />
+    <ClInclude Include="SceneObjectManager.h" />
+    <ClInclude Include="ShadowMap.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="UserInput.h" />
+    <ClInclude Include="ViewFrustum.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Shader\BlinnPhongShader.frag" />
+    <None Include="..\Shader\BlinnPhongShader.vert" />
+    <None Include="..\Shader\FragmentShader.frag" />
+    <None Include="..\Shader\TextureShader.frag" />
+    <None Include="..\Shader\TextureShader.vert" />
+    <None Include="..\Shader\VertexShader.vert" />
+    <None Include="..\Shader\ZBufferShader.frag" />
+    <None Include="..\Shader\ZBufferShader.geom" />
+    <None Include="..\Shader\ZBufferShader.vert" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C9014BDF-B872-47BA-975D-5B99722B963D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ECTS</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IntDir>$(SolutionDir)build-$(Configuration)\</IntDir>
+    <IncludePath>$(SolutionDir)External\Freetype\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)External\assimp-3.1.1\include\assimp\Compiler</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(SolutionDir)External\assimp-3.1.1\lib32;$(SolutionDir)External\FreeType\lib</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(SolutionDir)build-$(Configuration)\</IntDir>
+    <IncludePath>$(SolutionDir)External\Freetype\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)External\assimp-3.1.1\include\assimp\Compiler</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(SolutionDir)External\assimp-3.1.1\lib32;$(SolutionDir)External\FreeType\lib</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)External\GLEW\glew-1.12.0\include\GL;$(SolutionDir)External\GLFW\glfw-3.1.1.bin.WIN32\include\GLFW;$(SolutionDir)External\GLM\glm\glm;$(SolutionDir)External\assimp\include;$(SolutionDir)External\Bullet\bullet-2.82-r2704\src;$(SolutionDir)External\Freetype\include;$(SolutionDir)Scene;%(AdditionalIncludeDirectories);$(SolutionDir)Shader;$(SolutionDir)External\FreeImage\FreeImage\Dist\x32;$(SolutionDir)External</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)External\GLEW\glew-1.12.0\lib\Release\Win32;$(SolutionDir)External\GLFW\glfw-3.1.1.bin.WIN32\lib-vc2013;$(SolutionDir)External\assimp\lib\assimp_release-dll_win32;$(SolutionDir)External\FreeImage\FreeImage\Dist\x32;$(SolutionDir)External\FreeType\lib;$(SolutionDir)External\Bullet\cmake_builds\src\BulletCollision\cmake_builds\lib\Debug;$(SolutionDir)External\Bullet\cmake_builds\src\BulletDynamics\cmake_builds\lib\Debug;$(SolutionDir)External\Bullet\cmake_builds\src\LinearMath\cmake_builds\lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;FreeImage.lib;assimp.lib;freetype.lib;BulletCollision_Debug.lib;BulletDynamics_Debug.lib;LinearMath_Debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)External\GLEW\glew-1.12.0\include\GL;$(SolutionDir)External\GLFW\glfw-3.1.1.bin.WIN32\include\GLFW;$(SolutionDir)External\GLM\glm\glm;$(SolutionDir)External\assimp\include;$(SolutionDir)External\Bullet\bullet-2.82-r2704\src;$(SolutionDir)External\Freetype\include;$(SolutionDir)Scene;%(AdditionalIncludeDirectories);$(SolutionDir)Shader;$(SolutionDir)External\FreeImage\FreeImage\Dist\x32;$(SolutionDir)External</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)External\GLEW\glew-1.12.0\lib\Release\Win32;$(SolutionDir)External\GLFW\glfw-3.1.1.bin.WIN32\lib-vc2013;$(SolutionDir)External\assimp\lib\assimp_release-dll_win32;$(SolutionDir)External\FreeImage\FreeImage\Dist\x32;$(SolutionDir)External\FreeType\lib;$(SolutionDir)External\Bullet\cmake_builds\lib\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;FreeImage.lib;assimp.lib;freetype.lib;BulletCollision.lib;BulletDynamics.lib;LinearMath.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
