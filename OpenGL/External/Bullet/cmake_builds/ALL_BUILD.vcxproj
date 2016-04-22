@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{0EAC21E3-9B11-43C4-84B8-E97EAE658C58}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/bullet-2.82-r2704/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/bullet-2.82-r2704 -BC:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds --check-stamp-file C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\cmake_builds\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/bullet-2.82-r2704/CMakeLists.txt;C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\CMakeLists.txt;C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\cmake_builds\CMakeFiles\3.1.1\CMakeSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\cmake_builds\CMakeFiles\3.1.1\CMakeCCompiler.cmake;C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\cmake_builds\CMakeFiles\3.1.1\CMakeCXXCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\Platform\Windows-MSVC.cmake;C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\cmake_builds\CMakeFiles\3.1.1\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\CMakeCXXInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\Platform\Windows-MSVC.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\FindOpenGL.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\CMakeParseArguments.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\FindGLU.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\FindOpenGL.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.1\Modules\CMakeParseArguments.cmake;C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\BulletConfig.cmake.in;C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\cmake_builds\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Demos/BasicDemo/AppBasicDemo.vcxproj">
+      <Project>4E0D13D4-D978-4F94-9E50-00C0971C9FAD</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Demos/Benchmarks/AppBenchmarks.vcxproj">
+      <Project>DDA5B896-C1A4-4905-8954-6A98703DD1CE</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Demos/Box2dDemo/AppBox2dDemo.vcxproj">
+      <Project>3F35625C-ECC6-4F33-80B3-5450E48C9E1E</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Demos/CollisionInterfaceDemo/AppCollisionInterfaceDemo.vcxproj">
+      <Project>5DB33BF3-93F4-4619-9113-E737FD67E884</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Demos/ConcaveDemo/AppConcaveDemo.vcxproj">
+      <Project>4290EF57-3320-4457-80BD-D334F62E4CA9</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Demos/ConstraintDemo/AppConstraintDemo.vcxproj">
+      <Project>6B690B88-AFBC-433E-A74C-D6EFCC040F01</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Demos/ConvexDecompositionDemo/AppConvexDecompositionDemo.vcxproj">
+      <Project>A9E0CB0D-EE43-42A0-AE17-ED88703A3DEF</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Demos/FeatherstoneMultiBodyDemo/AppFeatherstoneMultiBodyDemo.vcxproj">
+      <Project>209189E3-D065-4C88-83CB-BA8D41DF2CC1</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Demos/FractureDemo/AppFractureDemo.vcxproj">
+      <Project>8505EB94-AA0D-4101-A3B5-8E7594C2D46E</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Demos/GenericJointDemo/AppGenericJointDemo.vcxproj">
+      <Project>76DD90EE-AE7E-4704-A015-EC7D3569BBEF</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Demos/GimpactTestDemo/AppGimpactTestDemo.vcxproj">
+      <Project>E1D2918C-DD55-45E5-849A-0D81CEFA71D5</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Demos/GyroscopicDemo/AppGyroscopicDemo.vcxproj">
+      <Project>1795D5CA-50CF-4EB3-B7CE-41B20BE9910A</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Demos/HelloWorld/AppHelloWorld.vcxproj">
+      <Project>82C88F58-BCC4-4103-A492-D937BDE7F2DB</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Demos/InternalEdgeDemo/AppInternalEdgeDemo.vcxproj">
+      <Project>F78BC00E-9802-44BF-844F-D109A04848B6</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Demos/RaytestDemo/AppRaytestDemo.vcxproj">
+      <Project>54273135-A4D9-463F-A084-D35970E9818D</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Demos/RollingFrictionDemo/AppRollingFrictionDemo.vcxproj">
+      <Project>D4FD0B53-9244-4974-AF70-36D72274690A</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Demos/SerializeDemo/AppSerializeDemo.vcxproj">
+      <Project>9DCA3029-63F4-4BED-8142-8C253C35A151</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Demos/VectorAdd_OpenCL/MiniCL/AppVectorAdd_Mini.vcxproj">
+      <Project>AEEDD337-0A2F-406E-AC99-14C5ED7016B0</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Demos/VectorAdd_OpenCL/NVidia/AppVectorAdd_NVidia.vcxproj">
+      <Project>240F80D3-A176-49AE-8692-184EBF9953ED</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Demos/VoronoiFractureDemo/AppVoronoiFractureDemo.vcxproj">
+      <Project>8577A56D-8794-48F2-83D6-02E821C2FEBE</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/src/BulletCollision/BulletCollision.vcxproj">
+      <Project>BB5FF36F-8BEE-43BA-A6CE-6535F0915A82</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/src/BulletDynamics/BulletDynamics.vcxproj">
+      <Project>ED6F5418-9C09-461F-813B-99F797BC0A40</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Extras/Serialize/BulletFileLoader/BulletFileLoader.vcxproj">
+      <Project>B41DE6EC-EF41-4429-A2EC-1C541058BCEE</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/src/BulletMultiThreaded/BulletMultiThreaded.vcxproj">
+      <Project>2F73E5F5-3D8C-4570-A821-809752E819D0</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/src/BulletSoftBody/BulletSoftBody.vcxproj">
+      <Project>BC2F60C1-9BF8-4540-839F-4071C5AC459E</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/BulletSoftBodySolvers_OpenCL_Mini.vcxproj">
+      <Project>AEEE9863-C35B-4D37-B0F5-D08B8660159C</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/NVidia/BulletSoftBodySolvers_OpenCL_NVidia.vcxproj">
+      <Project>F982891E-BBB1-407B-9A40-670246E856E1</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Extras/Serialize/BulletWorldImporter/BulletWorldImporter.vcxproj">
+      <Project>AC4DE2AE-18EB-47C8-B1B6-35C0E25BDED6</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Extras/Serialize/BulletXmlWorldImporter/BulletXmlWorldImporter.vcxproj">
+      <Project>4675B6DA-6104-4422-B9C3-06AC7F800B7C</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Extras/ConvexDecomposition/ConvexDecomposition.vcxproj">
+      <Project>D0F14F22-4AF5-4795-A60B-B0A93CEC7E74</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Extras/GIMPACTUtils/GIMPACTUtils.vcxproj">
+      <Project>FC29B8DD-078D-4ACD-A29D-AE096635449A</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Extras/HACD/HACD.vcxproj">
+      <Project>3AB1BD2A-26C7-4496-BD5C-719400038407</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/src/LinearMath/LinearMath.vcxproj">
+      <Project>30A438BB-B6BA-461F-A67D-2393A5B7E232</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/src/MiniCL/MiniCL.vcxproj">
+      <Project>AC055307-422E-47AE-956E-27626B512410</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/Demos/OpenGL/OpenGLSupport.vcxproj">
+      <Project>7371D7C0-55B1-4789-B5C4-EEE5A75BBCB5</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/ZERO_CHECK.vcxproj">
+      <Project>5F79EA85-FDDF-4833-9C5E-B57AA88091B1</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

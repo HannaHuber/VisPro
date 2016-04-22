@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{2F73E5F5-3D8C-4570-A821-809752E819D0}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>BulletMultiThreaded</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\cmake_builds\lib\Release\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">BulletMultiThreaded.dir\Release\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">BulletMultiThreaded</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.lib</TargetExt>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_IRR_STATIC_LIB_;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_IRR_STATIC_LIB_;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/bullet-2.82-r2704/src/BulletMultiThreaded/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/bullet-2.82-r2704 -BC:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds --check-stamp-file C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\cmake_builds\src\BulletMultiThreaded\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/bullet-2.82-r2704/src/BulletMultiThreaded/CMakeLists.txt;C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\CMakeLists.txt;C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\cmake_builds\src\BulletMultiThreaded\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\PlatformDefinitions.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\PpuAddressSpace.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuFakeDma.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuDoubleBuffer.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuLibspe2Support.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\btThreadSupportInterface.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\Win32ThreadSupport.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\PosixThreadSupport.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SequentialThreadSupport.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuSampleTaskProcess.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuCollisionObjectWrapper.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuCollisionTaskProcess.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuGatheringCollisionDispatcher.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuContactManifoldCollisionAlgorithm.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\btParallelConstraintSolver.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\btGpu3DGridBroadphase.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\btGpu3DGridBroadphaseSharedCode.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\btGpu3DGridBroadphaseSharedDefs.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\btGpu3DGridBroadphaseSharedTypes.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\btGpuDefines.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\btGpuUtilsSharedCode.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\btGpuUtilsSharedDefs.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\Box.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\boxBoxDistance.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuContactResult.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuMinkowskiPenetrationDepthSolver.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuConvexPenetrationDepthSolver.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuPreferredPenetrationDirections.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuGatheringCollisionTask.h" />
+    <ClInclude Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuCollisionShapes.h" />
+    <ClCompile Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuFakeDma.cpp"  />
+    <ClCompile Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuLibspe2Support.cpp"  />
+    <ClCompile Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\btThreadSupportInterface.cpp"  />
+    <ClCompile Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\Win32ThreadSupport.cpp"  />
+    <ClCompile Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\PosixThreadSupport.cpp"  />
+    <ClCompile Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SequentialThreadSupport.cpp"  />
+    <ClCompile Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuSampleTaskProcess.cpp"  />
+    <ClCompile Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuCollisionObjectWrapper.cpp"  />
+    <ClCompile Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuCollisionTaskProcess.cpp"  />
+    <ClCompile Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuGatheringCollisionDispatcher.cpp"  />
+    <ClCompile Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuContactManifoldCollisionAlgorithm.cpp"  />
+    <ClCompile Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\btParallelConstraintSolver.cpp"  />
+    <ClCompile Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\boxBoxDistance.cpp"  />
+    <ClCompile Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuContactResult.cpp"  />
+    <ClCompile Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuMinkowskiPenetrationDepthSolver.cpp"  />
+    <ClCompile Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuGatheringCollisionTask.cpp"  />
+    <ClCompile Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuCollisionShapes.cpp"  />
+    <ClCompile Include="C:\Users\Hanna\Documents\CG\ECTS\ECTS\External\Bullet\bullet-2.82-r2704\src\BulletMultiThreaded\btGpu3DGridBroadphase.cpp"  />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:/Users/Hanna/Documents/CG/ECTS/ECTS/External/Bullet/cmake_builds/ZERO_CHECK.vcxproj">
+      <Project>5F79EA85-FDDF-4833-9C5E-B57AA88091B1</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
