@@ -109,15 +109,17 @@ Mesh::~Mesh() {
 	delete shader; shader = nullptr;
 } 
 
-void Mesh::zBufferPass(ZBufferShader* z) {
+void Mesh::zBufferPass(ZBufferShader* z, glm::mat4& vp) {
 	z->useShader();
-	setUniformsForZBufferPass(z);
+	setUniformsForZBufferPass(z, vp);
 	renderToZBuffer();
 	glUseProgram(0);
 }
-void Mesh::setUniformsForZBufferPass(ZBufferShader* z) {
+void Mesh::setUniformsForZBufferPass(ZBufferShader* z, glm::mat4& vp) {
 	auto model_location = glGetUniformLocation(z->programHandle, "model");
 	glUniformMatrix4fv(model_location, 1, GL_FALSE, glm::value_ptr(model_matrix));
+	auto vp_location = glGetUniformLocation(z->programHandle, "view_proj");
+	glUniformMatrix4fv(vp_location, 1, GL_FALSE, glm::value_ptr(vp));
 }
 void Mesh::renderToZBuffer() {
 	glBindVertexArray(vao);

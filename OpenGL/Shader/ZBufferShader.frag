@@ -1,14 +1,14 @@
 // FRAGMENT SHADER calculate distance to light for each fragment
 #version 400 core
 
-in vec4 world_pos;
+layout(location = 0) out vec4 outColor;
 
-uniform vec3 light_pos;
-uniform vec2 sm_planes;
 
 void main() {
-	float dist = length(world_pos.xyz - light_pos);
-	dist = dist/sm_planes.y;
-	gl_FragDepth = dist*1.02 + 0.003;
+	// Screen space coordinates
+	outColor.rg = gl_FragCoord.xy;
+
+	// Depth values
+	outColor.b = gl_FragCoord.z;
 	
 }

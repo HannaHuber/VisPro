@@ -20,7 +20,7 @@ public:
 	virtual void setLighting(std::vector<std::shared_ptr<PointLight>> *allLights, int sm_light_id);
 	virtual void setViewProj(glm::mat4& vpm);
 	virtual void setCameraLoc(glm::vec3 loc);
-	virtual void renderToZBuffer(ZBufferShader* z);
+	virtual void renderToZBuffer(ZBufferShader* z, glm::mat4& vp);
 	std::vector<Mesh*> meshes;
 	std::vector<glm::vec3> relativeMeshPositions;
 	int faceCount =0; //number of faces in this Geometry

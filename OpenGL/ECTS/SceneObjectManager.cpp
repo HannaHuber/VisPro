@@ -31,13 +31,10 @@ void SceneObjectManager::setLighting(int sm_light_id) {
 }
 
 // Render depth values to z buffer (shadow map)
-void SceneObjectManager::renderToZBuffer(ZBufferShader* z) {
+void SceneObjectManager::renderToZBuffer(ZBufferShader* z, glm::mat4& vp) {
 	
-	for (std::shared_ptr<Environment> e : *environment) {		 // Render depth values for environment
-		e->renderToZBuffer(z);
-	}
 	for (std::shared_ptr<Energy> e : *e_items) {
-		e->renderToZBuffer(z);									 // Render depth values for energy items
+		e->renderToZBuffer(z, vp);									 // Render depth values for energy items
 	}
 }
 

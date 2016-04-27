@@ -28,8 +28,8 @@ public:
 	std::vector<GLuint> getIndices();
 
 	// Z buffer pass methods
-	void zBufferPass(ZBufferShader* z);
-	void setUniformsForZBufferPass(ZBufferShader* z);
+	void zBufferPass(ZBufferShader* z, glm::mat4& vp);
+	void setUniformsForZBufferPass(ZBufferShader* z, glm::mat4& vp);
 	void renderToZBuffer();
 
 

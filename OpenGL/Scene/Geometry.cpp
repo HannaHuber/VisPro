@@ -98,9 +98,9 @@ void Geometry::setCameraLoc(glm::vec3 loc){
 	}*/
 }
 
-void Geometry::renderToZBuffer(ZBufferShader* z) {
+void Geometry::renderToZBuffer(ZBufferShader* z, glm::mat4& vp) {
 	for (unsigned int i = 0; i < meshes.size(); i++){
-		meshes[i]->zBufferPass(z);
+		meshes[i]->zBufferPass(z, vp);
 	}
 
 }

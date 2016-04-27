@@ -29,7 +29,7 @@
 #include "../Shader/TextureShader.h"
 #include "SceneImporter.h"
 #include "SceneObjectManager.h"
-#include "ShadowMap.h"
+#include "CutawaySurface.h"
 
 using namespace std;
 using namespace glm;
@@ -37,7 +37,7 @@ using namespace glm;
 void initScreenParameters();
 void init(GLFWwindow* window);
 void update(GLFWwindow* window,float deltaTime);
-void ShadowMapZBufferPass();
+void createDepthImage();
 void ShadowMapShadingPass();
 void draw(); 
 void cleanup();
@@ -63,7 +63,7 @@ float ratio = width / height;
 float fov = glm::radians(70.0f);
 
 // Shadow Map
-ShadowMap shadow_map(512, 512, 90.0f, 1.0f, 200.0f); // w, h, fov, near, far
+CutawaySurface cutaway;
 
 // Control
 UserInput user_input;
@@ -147,8 +147,10 @@ int main(int argc, char** argv) {
 		// Update
 		update(window, deltaTime);
 
-		// Shadow Map
-		ShadowMapZBufferPass();
+		// Init depth image
+		createDepthImage();
+
+		// Jump flooding
 
 		// Draw 
 		if (useWireFrame){											// Filled polygons/wireframe 
@@ -266,8 +268,7 @@ void init(GLFWwindow* window) {
 	// Lighting and Shadows
 	int sm_light_id = 4;
 	obj_manager.setLighting(sm_light_id);
-	shadow_map.init();	
-	shadow_map.setLight(allLights[sm_light_id], sm_light_id); // Currently use first light only
+	cutaway.init(width, height);	
 	
 }
 void update(GLFWwindow* window, float deltaTime) {
@@ -283,20 +284,19 @@ void update(GLFWwindow* window, float deltaTime) {
 	
 }
 
-void ShadowMapZBufferPass() {
-	shadow_map.prepareZBufferPass();							
-	obj_manager.renderToZBuffer(shadow_map.z_buffer_shader);	
-	shadow_map.endZBufferPass();								
+void createDepthImage() {
+	cutaway.prepareZBufferPass();							
+	obj_manager.renderToZBuffer(cutaway.z_buffer_shader, camera->proj_matrix*camera->view_matrix);
+	cutaway.endZBufferPass();
 }
 
 void ShadowMapShadingPass() {
 	glViewport(0, 0, width, height);				// Reset viewport
-	//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);// Only call below?
-	shadow_map.prepareShadingPass(2);				// Bind depth texture to unit 2
+	cutaway.prepareShadingPass(2);				// Bind depth texture to unit 2
 	//glBindFramebuffer(GL_FRAMEBUFFER, scene_fbo);
 	glClearColor(0.0f, 0.0f, 0.3f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	drawnFaces = obj_manager.draw(&shadow_map, useViewFrustumCulling);					// Draw scene objects
+	drawnFaces = obj_manager.draw(&cutaway, useViewFrustumCulling);					// Draw scene objects
 }
 
 void draw() {	

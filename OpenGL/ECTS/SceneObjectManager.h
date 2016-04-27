@@ -17,7 +17,7 @@ public:
 	void setLighting(int sm_light_id);
 	
 	void update(float delta_t);
-	void renderToZBuffer(ZBufferShader* z);
+	void renderToZBuffer(ZBufferShader* z, glm::mat4& vp);
 	int draw(const ShadowMap* sm, bool useViewFrustumCulling);
 
 private:
