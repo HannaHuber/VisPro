@@ -5,7 +5,7 @@
 #include <vector>
 
 #include "Shader.h"
-#include "../ECTS/ShadowMap.h"
+#include "../ECTS/CutawaySurface.h"
 #include "Face.h"
 #include "BoundingBox.h"
 
@@ -34,7 +34,7 @@ public:
 
 
 	// Shading pass methods
-	void shadingPass(const ShadowMap* sm, glm::mat4& vp, glm::vec3 c, glm::vec2 planes);
+	void shadingPass(const CutawaySurface* c, glm::mat4& vp, glm::vec3 c, glm::vec2 planes);
 	void setUniformsForShadingPass(glm::mat4& vp, glm::vec3 c, int id, glm::vec2 planes);
 	virtual void draw();
 		

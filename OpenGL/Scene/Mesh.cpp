@@ -127,7 +127,7 @@ void Mesh::renderToZBuffer() {
 	glBindVertexArray(0);
 }
 
-void Mesh::shadingPass(const ShadowMap* sm, mat4& vp, vec3 c, vec2 planes) {
+void Mesh::shadingPass(const CutawaySurface* c, mat4& vp, vec3 c, vec2 planes) {
 	shader->useShader();
 	setUniformsForShadingPass(vp, c, sm->light_id, planes);
 	draw();
