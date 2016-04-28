@@ -30,6 +30,7 @@
 #include "SceneImporter.h"
 #include "SceneObjectManager.h"
 #include "CutawaySurface.h"
+#include "Quad.h"
 
 using namespace std;
 using namespace glm;
@@ -38,6 +39,7 @@ void initScreenParameters();
 void init(GLFWwindow* window);
 void update(GLFWwindow* window,float deltaTime);
 void createDepthImage();
+void calculateCutawaySurface();
 void ShadowMapShadingPass();
 void draw(); 
 void cleanup();
@@ -62,8 +64,9 @@ float farPlane = 180.0;
 float ratio = width / height;
 float fov = glm::radians(70.0f);
 
-// Shadow Map
+// Distance transform
 CutawaySurface cutaway;
+Quad quad();
 
 // Control
 UserInput user_input;
@@ -150,7 +153,8 @@ int main(int argc, char** argv) {
 		// Init depth image
 		createDepthImage();
 
-		// Jump flooding
+		// Compute cutaway surface
+		calculateCutawaySurface();
 
 		// Draw 
 		if (useWireFrame){											// Filled polygons/wireframe 
@@ -290,6 +294,24 @@ void createDepthImage() {
 	cutaway.endZBufferPass();
 }
 
+void calculateCutawaySurface() {
+
+
+
+	// Init step size with larger image dimension n
+	int step = (width > height ? width / 2 : height / 2); 
+
+	// Iterate over window with changing step size k = n/2^i at the ith iteration 
+	while (step > 0) {
+
+		// Draw quad + calculate distance transform
+
+
+		// Update step size for next iteration
+		step /= 2;
+	}
+
+}
 void ShadowMapShadingPass() {
 	glViewport(0, 0, width, height);				// Reset viewport
 	cutaway.prepareShadingPass(2);				// Bind depth texture to unit 2

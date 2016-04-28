@@ -31,7 +31,7 @@
     <ClCompile Include="..\Shader\ZBufferShader.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SceneObjectManager.cpp" />
-    <ClCompile Include="ShadowMap.cpp" />
+    <ClCompile Include="CutawaySurface.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="UserInput.cpp" />
     <ClCompile Include="ViewFrustum.cpp" />
@@ -56,7 +56,7 @@
     <ClInclude Include="..\Shader\TextureShader.h" />
     <ClInclude Include="..\Shader\ZBufferShader.h" />
     <ClInclude Include="SceneObjectManager.h" />
-    <ClInclude Include="ShadowMap.h" />
+    <ClInclude Include="CutawaySurface.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="UserInput.h" />
     <ClInclude Include="ViewFrustum.h" />
