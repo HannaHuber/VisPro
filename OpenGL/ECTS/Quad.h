@@ -1,6 +1,7 @@
 #pragma once
 
-#include "glm.hpp"
+#include "glew.h"
+#include "glfw3.h"
 #include <list>
 #include <vector>
 

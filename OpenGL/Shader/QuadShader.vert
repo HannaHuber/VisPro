@@ -12,7 +12,7 @@ uniform int step;
 
 void main()
 {
-    gl_Position = view_proj * model * vec4(position.x, position.y, 0.0f, 1.0f); 
+    gl_Position = view_proj * model * vec4(position.x, position.y, 0, 1); 
 
 	qCoords[0] = vec2(gl_Position.x + step, gl_Position.y - step);
 	qCoords[1] = vec2(gl_Position.x + step, gl_Position.y );

@@ -13,9 +13,7 @@ BlinnPhongShader::BlinnPhongShader(vec3 amb_col, vec3 diff_col, glm::vec3 spec_c
 , transparency(transp)
 {
 	useShader();
-
 	
-
 	// Set material specific uniforms
 	auto amb_col_location = glGetUniformLocation(programHandle, "material.ambient_color");
 	auto diff_col_location = glGetUniformLocation(programHandle, "material.diffuse_color");

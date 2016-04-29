@@ -40,7 +40,6 @@ void init(GLFWwindow* window);
 void update(GLFWwindow* window,float deltaTime);
 void createDepthImage();
 void calculateCutawaySurface();
-void ShadowMapShadingPass();
 void draw(); 
 void cleanup();
 
@@ -164,8 +163,9 @@ int main(int argc, char** argv) {
 			glEnable(GL_BLEND);
 			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		}
-		ShadowMapShadingPass();
-		draw();			// Currently does nothing
+
+		// Render scene
+		draw();			
 		
 		// Disable wireframe
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); 
@@ -304,24 +304,26 @@ void calculateCutawaySurface() {
 	while (step > 0) {
 
 		// Draw quad + calculate distance transform
-		cutaway.prepareQuadPass(step, camera->proj_matrix * camera->view_matrix());
+		cutaway.quadPass(step, camera->proj_matrix * camera->view_matrix());
 
 		// Update step size for next iteration
 		step /= 2;
 	}
 
 }
-void ShadowMapShadingPass() {
-					
-	// Draw to screen
-	glBindFramebuffer(GL_FRAMEBUFFER, 0);
-
-
-	
-	//drawnFaces = obj_manager.draw(&cutaway, useViewFrustumCulling);					// Draw scene objects
-}
 
 void draw() {	
+
+	// Draw to screen
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	glClearColor(0.0f, 0.0f, 0.3f, 1.0f);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glViewport(0, 0, width, height);
+
+	cutaway.prepareRenderPass(2);
+
+	// Render scene
+	drawnFaces = obj_manager.draw(&cutaway, useViewFrustumCulling);
 }
 
 void cleanup() {	

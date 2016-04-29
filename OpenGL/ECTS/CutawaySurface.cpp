@@ -12,11 +12,17 @@ CutawaySurface::CutawaySurface()
 	
 }
 CutawaySurface::~CutawaySurface() {
-	if (depth_map) {
-		glDeleteTextures(1, &depth_map);
+	if (tex1) {
+		glDeleteTextures(1, &tex1);
+	}
+	if (tex2) {
+		glDeleteTextures(1, &tex2);
 	}
 	if (fbo1) {
 		glDeleteBuffers(1, &fbo1);
+	}
+	if (fbo2) {
+		glDeleteBuffers(1, &fbo2);
 	}
 	if (z_buffer_shader) {
 		delete z_buffer_shader; 
@@ -39,8 +45,8 @@ void CutawaySurface::init(int w, int h, float z_near, float z_far, float angle) 
 	height = h;
 
 	// Init depth map
-	glGenTextures(1, &depth_map);
-	glBindTexture(GL_TEXTURE_2D, depth_map);
+	glGenTextures(1, &tex1);
+	glBindTexture(GL_TEXTURE_2D, tex1);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
@@ -50,7 +56,7 @@ void CutawaySurface::init(int w, int h, float z_near, float z_far, float angle) 
 	// Init framebuffer and attach depth map
 	glGenFramebuffers(1, &fbo1);
 	glBindFramebuffer(GL_FRAMEBUFFER, fbo1);
-	glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, depth_map, 0);
+	glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, tex1, 0);
 	GLenum DrawBuffers[1] = { GL_COLOR_ATTACHMENT0 };
 	glDrawBuffers(1, DrawBuffers);
 	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
@@ -58,17 +64,17 @@ void CutawaySurface::init(int w, int h, float z_near, float z_far, float angle) 
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
 	// Init second texture and framebuffer for jump flooding
-	glGenTextures(1, &target_tex);
-	glBindTexture(GL_TEXTURE_2D, target_tex);
+	glGenTextures(1, &tex2);
+	glBindTexture(GL_TEXTURE_2D, tex2);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	glBindTexture(GL_TEXTURE_2D, 0);
 	glGenFramebuffers(1, &fbo2);
 	glBindFramebuffer(GL_FRAMEBUFFER, fbo2);
-	glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, target_tex, 0);
-	GLenum DrawBuffers[1] = { GL_COLOR_ATTACHMENT0 };
-	glDrawBuffers(1, DrawBuffers);
+	glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, tex2, 0);
+	/*GLenum DrawBuffers[1] = { GL_COLOR_ATTACHMENT0 };
+	glDrawBuffers(1, DrawBuffers);*/
 	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
 		cout << "ERROR::FRAMEBUFFER:: Framebuffer is not complete!" << endl;
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
@@ -93,16 +99,18 @@ void CutawaySurface::endZBufferPass() {
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
-void CutawaySurface::prepareQuadPass(int step, mat4& vp) {
+void CutawaySurface::quadPass(int step, mat4& vp) {
 	glViewport(0, 0, width, height);
 
 	if (last_target == 2) {
-		look_up_tex = temp_tex;
+		look_up_tex = tex2;
+		target_tex = tex1;
 		target_fbo = fbo1;
 		last_target = 1;
 	}
 	else {
-		look_up_tex = depth_map;
+		look_up_tex = tex1;
+		target_tex = tex2;
 		target_fbo = fbo2;
 		last_target = 2;
 	}
@@ -125,7 +133,7 @@ void CutawaySurface::prepareQuadPass(int step, mat4& vp) {
 	auto model_location = glGetUniformLocation(quad_shader->programHandle, "model");
 	glUniformMatrix4fv(model_location, 1, GL_FALSE, glm::value_ptr(glm::mat4(1.0)));
 
-
+	// Draw
 	quad->bindVAO();
 	glDisable(GL_DEPTH_TEST);
 	glBindTexture(GL_TEXTURE_2D, look_up_tex);
@@ -135,9 +143,8 @@ void CutawaySurface::prepareQuadPass(int step, mat4& vp) {
 }
 
 
-void CutawaySurface::prepareShadingPass(int unit) {
-	glViewport(0, 0, width, height);
-	glBindFramebuffer(GL_FRAMEBUFFER, 0);
-	glClearColor(0.0f, 0.0f, 0.3f, 1.0f);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+void CutawaySurface::prepareRenderPass(int unit) {
+	glActiveTexture(GL_TEXTURE0 + unit);
+
+	glBindTexture(GL_TEXTURE_CUBE_MAP, target_tex);
 }

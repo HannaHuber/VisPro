@@ -28,7 +28,7 @@ void Geometry::update(float deltaTime){
 }
 
 /*Returns the number of faces that have been drawn. Is 0 if Geometry is culled*/
-int Geometry::draw(const CutawaySurface* c, ViewFrustum& frust, glm::mat4& vp, glm::vec3 cam, bool useViewFrustumCulling){
+int Geometry::draw(const CutawaySurface* c, ViewFrustum& frust, glm::mat4& vp, glm::vec3 cam, bool useViewFrustumCulling, bool clip){
 	if (useViewFrustumCulling){
 		if (!b->initialized){ // only calc bounding box if not done yet (performance ;) - objects are not moving)
 			delete b;
@@ -56,10 +56,11 @@ int Geometry::draw(const CutawaySurface* c, ViewFrustum& frust, glm::mat4& vp, g
 		}
 	}
 	for (unsigned int i = 0; i < meshes.size(); i++){
-		meshes[i]->shadingPass(c, vp, cam);
+		meshes[i]->renderPass(c, vp, cam, clip);
 	}
 	return faceCount;
 }
+
 
 void Geometry::draw() {
 	// Necessary due to abstract class SceneObject

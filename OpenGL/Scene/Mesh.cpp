@@ -127,19 +127,15 @@ void Mesh::renderToZBuffer() {
 	glBindVertexArray(0);
 }
 
-void Mesh::shadingPass(const CutawaySurface* c, mat4& vp, vec3 cam) {
+void Mesh::renderPass(const CutawaySurface* c, mat4& vp, vec3 cam, bool clip) {
 	shader->useShader();
-	setUniformsForShadingPass(vp, cam);
+	setUniformsForRenderPass(vp, cam, clip);
 	draw();
 	glUseProgram(0);
 
 }
-void Mesh::setUniformsForShadingPass(mat4& vp, vec3 cam) {
+void Mesh::setUniformsForRenderPass(mat4& vp, vec3 cam, bool clip) {
 	
-	// Depth texture [activated and bound in ShadowMap::prepareZTex() for all objects]
-	auto ztex_location = glGetUniformLocation(shader->programHandle, "shadow_map");
-	glUniform1i(ztex_location, 2);
-
 	// View projection matrix
 	auto view_proj_location = glGetUniformLocation(shader->programHandle, "view_proj");
 	glUniformMatrix4fv(view_proj_location, 1, GL_FALSE, glm::value_ptr(vp));
@@ -151,6 +147,16 @@ void Mesh::setUniformsForShadingPass(mat4& vp, vec3 cam) {
 	// Camera location
 	auto camera_coords_location = glGetUniformLocation(shader->programHandle, "camera_coords");
 	glUniform3fv(camera_coords_location, 1, glm::value_ptr(cam));
+
+	auto clip_location = glGetUniformLocation(shader->programHandle, "clip");
+	glUniform1i(clip_location, clip);
+	
+	if (clip) {
+		// Cutaway surface [activated and bound in CutawaySurface::prepareRenderpass() for all objects]
+		auto ztex_location = glGetUniformLocation(shader->programHandle, "cutaway_surface");
+		glUniform1i(ztex_location, 2);
+	}
+	
 
 	// Bind diffuse texture to unit 0
 	shader->bindTexture(0);

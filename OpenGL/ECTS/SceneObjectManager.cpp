@@ -49,7 +49,7 @@ void SceneObjectManager::update(float delta_t) {
 }
 
 // Draw drawable objects. Return number of drawn faces
-int SceneObjectManager::draw(const CutawaySurface* sm, bool useViewFrustumCulling) {
+int SceneObjectManager::draw(const CutawaySurface* c, bool useViewFrustumCulling) {
 	glm::mat4 vpm = camera->proj_matrix * camera->view_matrix();// Calculate view projection matrix from camera
 	glm::vec3 loc = camera->location();
 	
@@ -58,23 +58,24 @@ int SceneObjectManager::draw(const CutawaySurface* sm, bool useViewFrustumCullin
 	}
 	
 	int faces = 0;
-	for (std::shared_ptr<Environment> e : *environment) {		// Draw environment
-		//faces += e->draw(sm, frustum, vpm, loc, f, useViewFrustumCulling);
-		faces += e->draw(sm, frustum, vpm, loc, useViewFrustumCulling);
+
+	// Draw + clip secondary objects
+	for (std::shared_ptr<Environment> e : *environment) {		
+		faces += e->draw(c, frustum, vpm, loc, useViewFrustumCulling, true);
 	}	
 
-	//Important: draw transparent objects (energy items) after all other objects
+	// Important: draw transparent objects (energy items) after all other objects
 	if (useTransparency){
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		//glDisable(GL_CULL_FACE);
 	}
 	else{
 		glDisable(GL_BLEND);
-		//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	}
-	for (std::shared_ptr<Energy> e : *e_items) {				// Draw energy items
-		faces += e->draw(sm, frustum, vpm, loc, false);// do not use view frustum culling because these objects are moving and have only few faces
+
+	// Draw primary objects withour clipping
+	for (std::shared_ptr<Energy> e : *e_items) {				
+		faces += e->draw(c, frustum, vpm, loc, false, false);// do not use view frustum culling because these objects are moving and have only few faces
 	}
 
 	glEnable(GL_CULL_FACE);

@@ -33,9 +33,9 @@ public:
 	void renderToZBuffer();
 
 
-	// Shading pass methods
-	void shadingPass(const CutawaySurface* c, glm::mat4& vp, glm::vec3 cam);
-	void setUniformsForShadingPass(glm::mat4& vp, glm::vec3 cam);
+	// Render pass methods
+	void renderPass(const CutawaySurface* c, glm::mat4& vp, glm::vec3 cam, bool clip);
+	void setUniformsForRenderPass(glm::mat4& vp, glm::vec3 cam, bool clip);
 	virtual void draw();
 		
 	// Initial settings

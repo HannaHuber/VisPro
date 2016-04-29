@@ -12,8 +12,8 @@ public:
 	Geometry(glm::mat4& model_matrix, std::vector<Mesh*> m);
 	virtual ~Geometry();
 	virtual void update(float deltaTime);
-	int Geometry::draw(const CutawaySurface* c, ViewFrustum& frust, glm::mat4& vp, glm::vec3 cam, bool useViewFrustumCulling);
-		virtual void draw();
+	int Geometry::draw(const CutawaySurface* c, ViewFrustum& frust, glm::mat4& vp, glm::vec3 cam, bool useViewFrustumCulling, bool clip);
+	void draw();
 	virtual void addChild(Geometry* g);
 	virtual void setShader(Shader* shader);
 	virtual void transformModelMatrix(glm::mat4& transform );
