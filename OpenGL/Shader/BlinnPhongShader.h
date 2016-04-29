@@ -9,7 +9,7 @@ class BlinnPhongShader : public Shader {
 public:
 	BlinnPhongShader(glm::vec3 amb_col, glm::vec3 diff_col, glm::vec3 spec_col, float shin, float transp);
 	~BlinnPhongShader();
-	virtual void setLighting(std::vector<std::shared_ptr<PointLight>> *allLights, int sm_light_id);
+	virtual void setLighting(std::vector<std::shared_ptr<PointLight>> *allLights);
 
 private:
 	glm::vec3 ambient_color;

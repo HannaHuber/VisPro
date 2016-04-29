@@ -34,12 +34,12 @@ public:
 
 
 	// Shading pass methods
-	void shadingPass(const CutawaySurface* c, glm::mat4& vp, glm::vec3 c, glm::vec2 planes);
-	void setUniformsForShadingPass(glm::mat4& vp, glm::vec3 c, int id, glm::vec2 planes);
+	void shadingPass(const CutawaySurface* c, glm::mat4& vp, glm::vec3 cam);
+	void setUniformsForShadingPass(glm::mat4& vp, glm::vec3 cam);
 	virtual void draw();
 		
 	// Initial settings
-	void setLighting(std::vector<std::shared_ptr<PointLight>> *allLights, int sm_light_id);
+	void setLighting(std::vector<std::shared_ptr<PointLight>> *allLights);
 	void setShader(Shader* s);
 
 	BoundingBox* Mesh::calcBoundingBoxWithApplying();

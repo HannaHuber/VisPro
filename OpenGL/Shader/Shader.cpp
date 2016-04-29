@@ -150,7 +150,7 @@ void Shader::linkWithGeometryShader()
 	}
 }
 
-void Shader::setLighting(std::vector<std::shared_ptr<PointLight>> *allLights, int sm_light_id) {
+void Shader::setLighting(std::vector<std::shared_ptr<PointLight>> *allLights) {
 
 }
 

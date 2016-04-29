@@ -26,10 +26,12 @@
     <ClCompile Include="..\Shader\AnimatedTextureShader.cpp" />
     <ClCompile Include="..\Shader\BlinnPhongShader.cpp" />
     <ClCompile Include="..\Shader\NormalShader.cpp" />
+    <ClCompile Include="..\Shader\QuadShader.cpp" />
     <ClCompile Include="..\Shader\Shader.cpp" />
     <ClCompile Include="..\Shader\TextureShader.cpp" />
     <ClCompile Include="..\Shader\ZBufferShader.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Quad.cpp" />
     <ClCompile Include="SceneObjectManager.cpp" />
     <ClCompile Include="CutawaySurface.cpp" />
     <ClCompile Include="Texture.cpp" />
@@ -52,9 +54,11 @@
     <ClInclude Include="..\Shader\AnimatedTextureShader.h" />
     <ClInclude Include="..\Shader\BlinnPhongShader.h" />
     <ClInclude Include="..\Shader\NormalShader.h" />
+    <ClInclude Include="..\Shader\QuadShader.h" />
     <ClInclude Include="..\Shader\Shader.h" />
     <ClInclude Include="..\Shader\TextureShader.h" />
     <ClInclude Include="..\Shader\ZBufferShader.h" />
+    <ClInclude Include="Quad.h" />
     <ClInclude Include="SceneObjectManager.h" />
     <ClInclude Include="CutawaySurface.h" />
     <ClInclude Include="Texture.h" />
@@ -65,11 +69,12 @@
     <None Include="..\Shader\BlinnPhongShader.frag" />
     <None Include="..\Shader\BlinnPhongShader.vert" />
     <None Include="..\Shader\FragmentShader.frag" />
+    <None Include="..\Shader\QuadShader.frag" />
+    <None Include="..\Shader\QuadShader.vert" />
     <None Include="..\Shader\TextureShader.frag" />
     <None Include="..\Shader\TextureShader.vert" />
     <None Include="..\Shader\VertexShader.vert" />
     <None Include="..\Shader\ZBufferShader.frag" />
-    <None Include="..\Shader\ZBufferShader.geom" />
     <None Include="..\Shader\ZBufferShader.vert" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

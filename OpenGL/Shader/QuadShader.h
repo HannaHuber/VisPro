@@ -4,6 +4,6 @@
 
 class QuadShader : public Shader {
 public:
-	QuadShader();
+	QuadShader(float z_near, float z_far, float angle);
 	~QuadShader();
 };

@@ -59,14 +59,14 @@ vector<shared_ptr<Environment>> environment;
 Camera* camera;
 float speed = 4.4f;
 float look_speed = 0.001f;
-float nearPlane = 0.1;
-float farPlane = 180.0;
+float near_plane = 0.1;
+float far_plane = 180.0;
 float ratio = width / height;
 float fov = glm::radians(70.0f);
 
 // Distance transform
 CutawaySurface cutaway;
-Quad quad();
+float drill_angle = glm::radians(45.0f);
 
 // Control
 UserInput user_input;
@@ -261,7 +261,7 @@ void init(GLFWwindow* window) {
 	// Init camera
 	mat4 model = translate(mat4(1.0), vec3(-5.0, 1.0, 25.0));
 	camera = new Camera(model);
-	camera->setProjMatrix(width, height, fov, nearPlane, farPlane);
+	camera->setProjMatrix(width, height, fov, near_plane, far_plane);
 	
 	// Set objects
 	obj_manager.setObjects(camera,
@@ -269,10 +269,11 @@ void init(GLFWwindow* window) {
 		&environment,
 		&e_items);
 	
-	// Lighting and Shadows
-	int sm_light_id = 4;
-	obj_manager.setLighting(sm_light_id);
-	cutaway.init(width, height);	
+	// Lighting
+	obj_manager.setLighting();
+
+	// Distance transform
+	cutaway.init(width, height, near_plane, far_plane, drill_angle);	
 	
 }
 void update(GLFWwindow* window, float deltaTime) {
@@ -290,14 +291,12 @@ void update(GLFWwindow* window, float deltaTime) {
 
 void createDepthImage() {
 	cutaway.prepareZBufferPass();							
-	obj_manager.renderToZBuffer(cutaway.z_buffer_shader, camera->proj_matrix*camera->view_matrix);
+	obj_manager.renderToZBuffer(cutaway.z_buffer_shader, camera->proj_matrix*camera->view_matrix());
 	cutaway.endZBufferPass();
 }
 
 void calculateCutawaySurface() {
-
-
-
+	
 	// Init step size with larger image dimension n
 	int step = (width > height ? width / 2 : height / 2); 
 
@@ -305,7 +304,7 @@ void calculateCutawaySurface() {
 	while (step > 0) {
 
 		// Draw quad + calculate distance transform
-
+		cutaway.prepareQuadPass(step, camera->proj_matrix * camera->view_matrix());
 
 		// Update step size for next iteration
 		step /= 2;
@@ -313,12 +312,13 @@ void calculateCutawaySurface() {
 
 }
 void ShadowMapShadingPass() {
-	glViewport(0, 0, width, height);				// Reset viewport
-	cutaway.prepareShadingPass(2);				// Bind depth texture to unit 2
-	//glBindFramebuffer(GL_FRAMEBUFFER, scene_fbo);
-	glClearColor(0.0f, 0.0f, 0.3f, 1.0f);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	drawnFaces = obj_manager.draw(&cutaway, useViewFrustumCulling);					// Draw scene objects
+					
+	// Draw to screen
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+
+	
+	//drawnFaces = obj_manager.draw(&cutaway, useViewFrustumCulling);					// Draw scene objects
 }
 
 void draw() {	

@@ -2,7 +2,7 @@
 
 #include "SceneObject.h"
 #include "Mesh.h"
-#include "../ECTS/ShadowMap.h"
+#include "../ECTS/CutawaySurface.h"
 #include <vector>
 #include <memory>
 #include "../ECTS/ViewFrustum.h"
@@ -12,12 +12,12 @@ public:
 	Geometry(glm::mat4& model_matrix, std::vector<Mesh*> m);
 	virtual ~Geometry();
 	virtual void update(float deltaTime);
-	int Geometry::draw(const ShadowMap* sm, ViewFrustum& frust, glm::mat4& vp, glm::vec3 c, glm::vec2 planes, bool useViewFrustumCulling);
+	int Geometry::draw(const CutawaySurface* c, ViewFrustum& frust, glm::mat4& vp, glm::vec3 cam, bool useViewFrustumCulling);
 		virtual void draw();
 	virtual void addChild(Geometry* g);
 	virtual void setShader(Shader* shader);
 	virtual void transformModelMatrix(glm::mat4& transform );
-	virtual void setLighting(std::vector<std::shared_ptr<PointLight>> *allLights, int sm_light_id);
+	virtual void setLighting(std::vector<std::shared_ptr<PointLight>> *allLights);
 	virtual void setViewProj(glm::mat4& vpm);
 	virtual void setCameraLoc(glm::vec3 loc);
 	virtual void renderToZBuffer(ZBufferShader* z, glm::mat4& vp);

@@ -127,26 +127,18 @@ void Mesh::renderToZBuffer() {
 	glBindVertexArray(0);
 }
 
-void Mesh::shadingPass(const CutawaySurface* c, mat4& vp, vec3 c, vec2 planes) {
+void Mesh::shadingPass(const CutawaySurface* c, mat4& vp, vec3 cam) {
 	shader->useShader();
-	setUniformsForShadingPass(vp, c, sm->light_id, planes);
+	setUniformsForShadingPass(vp, cam);
 	draw();
 	glUseProgram(0);
 
 }
-void Mesh::setUniformsForShadingPass(mat4& vp, vec3 c, int light_id, vec2 planes) {
+void Mesh::setUniformsForShadingPass(mat4& vp, vec3 cam) {
 	
 	// Depth texture [activated and bound in ShadowMap::prepareZTex() for all objects]
 	auto ztex_location = glGetUniformLocation(shader->programHandle, "shadow_map");
 	glUniform1i(ztex_location, 2);
-
-	// Light id (when using only one light source)
-	auto id_location = glGetUniformLocation(shader->programHandle, "sm_light_id");
-	glUniform1i(id_location, light_id);
-
-	// Far plane
-	auto far_location = glGetUniformLocation(shader->programHandle, "planes");
-	glUniform2fv(far_location, 1, glm::value_ptr(planes));
 
 	// View projection matrix
 	auto view_proj_location = glGetUniformLocation(shader->programHandle, "view_proj");
@@ -158,7 +150,7 @@ void Mesh::setUniformsForShadingPass(mat4& vp, vec3 c, int light_id, vec2 planes
 
 	// Camera location
 	auto camera_coords_location = glGetUniformLocation(shader->programHandle, "camera_coords");
-	glUniform3fv(camera_coords_location, 1, glm::value_ptr(c));
+	glUniform3fv(camera_coords_location, 1, glm::value_ptr(cam));
 
 	// Bind diffuse texture to unit 0
 	shader->bindTexture(0);
@@ -274,10 +266,8 @@ void Mesh::setShader(Shader* s) {
 	glUseProgram(0);
 }
 
-void Mesh::setLighting(std::vector<std::shared_ptr<PointLight>> *allLights, int sm_light_id) {
-	//shader->useShader();
-	shader->setLighting(allLights , sm_light_id);
-	//glUseProgram(0);
+void Mesh::setLighting(std::vector<std::shared_ptr<PointLight>> *allLights) {
+	shader->setLighting(allLights);
 }
 const float* Mesh::vec3ToFloatArray(std::list<glm::vec3*>& vectors){
 	unsigned int arraySize = vectors.size()*3;

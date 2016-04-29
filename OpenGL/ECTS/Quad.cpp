@@ -21,12 +21,7 @@ Quad::Quad() {
 	glBindVertexArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-	shader = new QuadShader();
-
 	
-	
-	
-
 }
 
 // Init vertex positions
@@ -43,6 +38,8 @@ Quad::~Quad() {
 	glDeleteBuffers(1, &vbo);
 	glDeleteVertexArrays(1, &vao);
 
-	delete shader;
-	shader = nullptr;
+}
+
+void Quad::bindVAO() {
+	glBindVertexArray(vao);
 }

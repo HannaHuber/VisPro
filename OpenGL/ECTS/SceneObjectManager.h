@@ -14,11 +14,11 @@ public:
 					std::vector<std::shared_ptr<PointLight>>* l, 
 					std::vector<std::shared_ptr<Environment>>* e, 
 					std::vector<std::shared_ptr<Energy>>* e_i);
-	void setLighting(int sm_light_id);
+	void setLighting();
 	
 	void update(float delta_t);
 	void renderToZBuffer(ZBufferShader* z, glm::mat4& vp);
-	int draw(const ShadowMap* sm, bool useViewFrustumCulling);
+	int draw(const CutawaySurface* sm, bool useViewFrustumCulling);
 
 private:
 	std::vector<std::shared_ptr<PointLight>>* lights;

@@ -35,7 +35,7 @@ BlinnPhongShader::~BlinnPhongShader() {
 
 }
 
-void BlinnPhongShader::setLighting(std::vector<std::shared_ptr<PointLight>> *allLights, int sm_light_id) {
+void BlinnPhongShader::setLighting(std::vector<std::shared_ptr<PointLight>> *allLights) {
 	useShader();
 	glm::vec3 att[20];
 	glm::vec3 intensity[20];
@@ -60,12 +60,6 @@ void BlinnPhongShader::setLighting(std::vector<std::shared_ptr<PointLight>> *all
 	glUniform3fv(light_loc_location, 20, glm::value_ptr(location[0]));
 	glUniform3fv(light_int_location, 20, glm::value_ptr(intensity[0]));
 	glUniform3fv(light_att_location, 20, glm::value_ptr(att[0]));
-
-	// Shadow map uniforms
-	auto id_loc = glGetUniformLocation(programHandle, "sm_light_id");
-	auto pos_loc = glGetUniformLocation(programHandle, "sm_light_pos");
-	glUniform1i(id_loc, sm_light_id);
-	glUniform3fv(pos_loc, 1, glm::value_ptr(location[sm_light_id]));
 
 	glUseProgram(0);
 }

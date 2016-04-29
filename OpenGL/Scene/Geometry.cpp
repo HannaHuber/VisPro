@@ -28,7 +28,7 @@ void Geometry::update(float deltaTime){
 }
 
 /*Returns the number of faces that have been drawn. Is 0 if Geometry is culled*/
-int Geometry::draw(const ShadowMap* sm, ViewFrustum& frust, glm::mat4& vp, glm::vec3 c, glm::vec2 planes, bool useViewFrustumCulling){
+int Geometry::draw(const CutawaySurface* c, ViewFrustum& frust, glm::mat4& vp, glm::vec3 cam, bool useViewFrustumCulling){
 	if (useViewFrustumCulling){
 		if (!b->initialized){ // only calc bounding box if not done yet (performance ;) - objects are not moving)
 			delete b;
@@ -56,7 +56,7 @@ int Geometry::draw(const ShadowMap* sm, ViewFrustum& frust, glm::mat4& vp, glm::
 		}
 	}
 	for (unsigned int i = 0; i < meshes.size(); i++){
-		meshes[i]->shadingPass(sm, vp, c, planes);
+		meshes[i]->shadingPass(c, vp, cam);
 	}
 	return faceCount;
 }
@@ -82,9 +82,9 @@ void Geometry::transformModelMatrix(mat4& transform){
 		meshes[i]->model_matrix = transform * meshes[i]->model_matrix;
 	}
 }
-void Geometry::setLighting(std::vector<std::shared_ptr<PointLight>> *allLights, int sm_light_id){
+void Geometry::setLighting(std::vector<std::shared_ptr<PointLight>> *allLights){
 	for (unsigned int i = 0; i < meshes.size(); i++){
-		meshes[i]->setLighting(allLights, sm_light_id);
+		meshes[i]->setLighting(allLights);
 	}
 }
 void Geometry::setViewProj(mat4& vpm){

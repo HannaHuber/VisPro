@@ -17,7 +17,7 @@ public:
 	~Shader();
 
 	void useShader() const;
-	virtual void setLighting(std::vector<std::shared_ptr<PointLight>> *allLights, int sm_light_id);
+	virtual void setLighting(std::vector<std::shared_ptr<PointLight>> *allLights);
 	virtual void bindTexture(int unit);
 
 	GLuint programHandle;
